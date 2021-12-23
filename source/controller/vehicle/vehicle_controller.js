@@ -29,7 +29,7 @@ export const vehicle_add = async (req, res) => {
   const { vehicle_plate, current_status, is_active } = req.body;
   try {
     const vehicle = await pg_client.query(
-      "INSERT INTO vehicle (vehicle_plate, current_status, is_active) VALUES ($1, $2)",
+      "INSERT INTO vehicle (vehicle_plate, current_status, is_active) VALUES ($1, $2, $3)",
       [vehicle_plate, current_status, is_active]
     );
     return res.status(200).send({ messages: "Vehicle created successfully ", vehicle });
@@ -64,7 +64,7 @@ export const vehicle_update = async (req, res) => {
 export const vehicle_delete = async (req, res) => {
   const { id } = req.body;
   try {
-    const vehicle = await pg_client.query("DELETE FROM users WHERE id = $1", [id]);
+    const vehicle = await pg_client.query("DELETE FROM vehicle WHERE id = $1", [id]);
     return res.status(200).send({ messages: "Vehicle deleted successfully ", vehicle });
   } catch (error) {
     return res.status(500).send({ message: error });
