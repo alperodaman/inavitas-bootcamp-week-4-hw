@@ -50,10 +50,10 @@ export const log_location_add = async (req, res) => {
   const created_at = new Date();
   try {
     const log_location = await pg_client.query(
-      "INSERT INTO devices (vehicle_id, device_id, latitude, longitude, created_at) VALUES ($1, $2, $3, $4, $5)",
+      "INSERT INTO log_location (vehicle_id, device_id, latitude, longitude, created_at) VALUES ($1, $2, $3, $4, $5)",
       [vehicle_id, device_id, latitude, longitude, created_at]
     );
-    return res.status(200).send({ messages: "device created successfully ", log_location });
+    return res.status(200).send({ messages: "log_location created successfully ", log_location });
   } catch (error) {
     return res.status(500).send({ message: error });
   }
