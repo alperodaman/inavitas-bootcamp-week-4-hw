@@ -71,11 +71,11 @@ export const device_list = async (req, res) => {
 
 // created device info
 export const device_add = async (req, res) => {
-  const { device_name, is_online, is_active } = req.body;
+  const { vehicle_id, device_type_id, device_name, is_online, is_active } = req.body;
   try {
     const device = await pg_client.query(
-      "INSERT INTO devices (device_name, is_online, is_active) VALUES ($1, $2, $3)",
-      [device_name, is_online, is_active]
+      "INSERT INTO devices (vehicle_id, device_type_id, device_name, is_online, is_active) VALUES ($1, $2, $3, $4, $5)",
+      [vehicle_id, device_type_id, device_name, is_online, is_active]
     );
     return res.status(200).send({ messages: "device created successfully ", device });
   } catch (error) {
