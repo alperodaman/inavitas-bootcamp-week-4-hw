@@ -1,4 +1,4 @@
-import pg_client from "../../adapters/database/postgresql";
+import pg_client from "../../adapters/database/postgresql.js";
 
 // send vehicle info by ID
 export const vehicle = async (req, res) => {

@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { log_temperature, log_temperature_list, log_temperature_add } from "../controller/log_temperature";
+import {
+  log_temperature,
+  log_temperature_list,
+  log_temperature_add,
+} from "../controller/log_temperature/log_temperature_controller.js";
 
 const router = Router();
 

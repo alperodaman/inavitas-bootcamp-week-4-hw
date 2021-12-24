@@ -1,9 +1,9 @@
 import { Router } from "express";
-import device_type from "./devices_type";
-import device from "./devices";
-import log_location from "./log_location";
-import log_temperature from "./log_temperature";
-import vehicle from "./vehicle";
+import device_type from "./devices_type.js";
+import device from "./devices.js";
+import log_location from "./log_location.js";
+import log_temperature from "./log_temperature.js";
+import vehicle from "./vehicle.js";
 
 const router = Router();
 

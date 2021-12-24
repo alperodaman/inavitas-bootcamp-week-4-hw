@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { device_type, device_type_list, device_type_add, device_type_delete } from "../controller/devices_type";
+import {
+  device_type,
+  device_type_list,
+  device_type_add,
+  device_type_delete,
+} from "../controller/devices_type/devices_type_controller.js";
 
 const router = Router();
 

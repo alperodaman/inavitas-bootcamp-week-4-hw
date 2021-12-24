@@ -1,4 +1,4 @@
-import pg_client from "../../adapters/database/postgresql";
+import pg_client from "../../adapters/database/postgresql.js";
 
 // send device_type info by ID
 export const device_type = async (req, res) => {

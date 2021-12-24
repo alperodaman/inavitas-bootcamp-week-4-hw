@@ -1,5 +1,11 @@
 import { Router } from "express";
-import { vehicle, vehicle_list, vehicle_add, vehicle_update, vehicle_delete } from "../controller/vehicle";
+import {
+  vehicle,
+  vehicle_list,
+  vehicle_add,
+  vehicle_update,
+  vehicle_delete,
+} from "../controller/vehicle/vehicle_controller.js";
 
 const router = Router();
 

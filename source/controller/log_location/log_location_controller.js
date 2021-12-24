@@ -1,4 +1,4 @@
-import pg_client from "../../adapters/database/postgresql";
+import pg_client from "../../adapters/database/postgresql.js";
 
 // send log_location info by ID
 export const log_location = async (req, res) => {

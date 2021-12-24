@@ -1,4 +1,4 @@
-import pg_client from "../../adapters/database/postgresql";
+import pg_client from "../../adapters/database/postgresql.js";
 
 // send device info by ID
 export const device = async (req, res) => {
@@ -88,7 +88,7 @@ export const device_update = async (req, res) => {
   const { id, is_online, is_active } = req.body;
   try {
     let device;
-    if (current_status && is_active) {
+    if (is_online && is_active) {
       device = await pg_client.query("UPDATE devices SET is_online = $1, is_active = $2 WHERE id = $3", [
         is_online,
         is_active,

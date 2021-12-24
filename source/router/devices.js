@@ -1,5 +1,11 @@
 import { Router } from "express";
-import { device, device_list, device_add, device_update, device_delete } from "../controller/devices";
+import {
+  device,
+  device_list,
+  device_add,
+  device_update,
+  device_delete,
+} from "../controller/devices/devices_controller.js";
 
 const router = Router();
 
