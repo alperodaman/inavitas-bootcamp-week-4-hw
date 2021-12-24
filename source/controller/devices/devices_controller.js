@@ -4,11 +4,11 @@ import pg_client from "../../adapters/database/postgresql";
 export const device = async (req, res) => {
   const { id } = req.body;
   try {
-    const device = await pg_client.query(
+    const _device = await pg_client.query(
       "SELECT vehicle_id, device_type_id, device_name, is_online, is_active FROM devices WHERE id=$1",
       [id]
     );
-    if (!device) {
+    if (!_device) {
       return res.status(404).send({ message: "Device NOT found!" });
     }
 

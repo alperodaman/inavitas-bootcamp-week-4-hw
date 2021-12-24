@@ -4,8 +4,8 @@ import pg_client from "../../adapters/database/postgresql";
 export const vehicle = async (req, res) => {
   const { id } = req.body;
   try {
-    const vehicle = await pg_client.query("SELECT vehicle_plate, is_active FROM vehicle WHERE id=$1", [id]);
-    if (!vehicle) {
+    const _vehicle = await pg_client.query("SELECT vehicle_plate, is_active FROM vehicle WHERE id=$1", [id]);
+    if (!_vehicle) {
       return res.status(404).send({ message: "Vehicle NOT found!" });
     }
     return res.status(200).send({ messages: "Vehicle info sent successfully ", vehicle });
